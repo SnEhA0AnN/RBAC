@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --secondary: #64748b;
+  --background: #f8fafc;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background);
+  font-family: 'Inter', sans-serif;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 0.5rem;
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
+  padding: 1px;
+}
+
+.gradient-border > * {
+  background: white;
+  border-radius: inherit;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 
+           transition-all duration-200 shadow-lg hover:shadow-indigo-500/25;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-white text-gray-700 rounded-lg hover:bg-gray-50 
+           border border-gray-200 transition-all duration-200;
+  }
+
+  .input-field {
+    @apply pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none 
+           focus:ring-2 focus:ring-indigo-500 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .select-field {
+    @apply border border-gray-200 rounded-lg px-3 py-2 focus:outline-none 
+           focus:ring-2 focus:ring-indigo-500 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow 
+           duration-200 overflow-hidden border border-gray-100;
+  }
+
+  .table-header {
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase 
+           tracking-wider cursor-pointer hover:text-indigo-600 transition-colors;
+  }
+}
